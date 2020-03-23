@@ -1,0 +1,63 @@
+/*
+  ABACLES
+*/
+
+.button
+{
+    margin: 5px;
+    padding: 15px 30px;
+    text-align: center;
+    font-size: 20px;
+    display: inline-block;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 5px #aaaaaa;
+    background-color: #2864c8;
+    color: #ffffff;
+    font-weight: bold;
+    transition-duration: 0.2s;
+}
+.button:hover
+{
+    background-color: #aac8ff;
+    color: #2864c8;
+    box-shadow: 0px 5px #ccdeff;
+    transition-duration: 0.2s;
+}
+.button:active
+{
+    background-color: #aaaaaa;
+    color: #ffffff;
+    box-shadow: 0px 5px #2864c8;
+    transition-duration: 0.2s;
+}
+
+.gobutton
+{
+    margin: 3px 10px;
+    padding: 3px 20px;
+    text-align: center;
+    font-size: 20px;
+    display: inline-block;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 5px 0px rgb(240,240,155);
+    background-color: #2864c8;
+    color: #ffffff;
+    font-weight: bold;
+    transition-duration: 0.2s;
+}
+.gobutton:hover
+{
+    background-color: #aac8ff;
+    color: #2864c8;
+    box-shadow: 5px 0px #ccdeff;
+    transition-duration: 0.2s;
+}
+.gobutton:active
+{
+    background-color: #aaaaaa;
+    color: #ffffff;
+    box-shadow: 5px 0px #2864c8;
+    transition-duration: 0.2s;
+}

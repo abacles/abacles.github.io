@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<!--
+    ABACLES
+  -->
+
+<html>
+
+
+  <head>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-68975393-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-68975393-1');
+    </script>
+
+    <title>Pinyin Labeler</title>
+
+    <meta charset = "utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="../basic.css" />
+    <link rel="stylesheet" type="text/css" href="../topnav.css" />
+    <link rel="stylesheet" type="text/css" href="../imgtxt.css" />
+    <link rel="stylesheet" type="text/css" href="../botnav.css" />
+    <link rel="stylesheet" type="text/css" href="../buttons.css" />
+    <link rel="stylesheet" type="text/css" href="../forms.css" />
+   
+  </head>
+  
+
+  <body>
+
+    <div id="main">
+
+      <div id="topnav">
+
+	<!--table id="navbar">
+	  <tr>
+	    <td><a href="about.html">About</a></td>
+	    <td><a href="comps.html">Competitions</a></td>
+	    <td><a href="resrc.html">Resources</a></td>
+	  </tr>
+	</table-->
+
+	<div id="navlogo_wrap">
+	  <div id="navlogo">
+	    
+	    <a href="../index.html"><img id="main_logo" src="../logo.png" alt="Logo" /></a>
+	    <a href="../index.html">abacles</a>
+	    
+	  </div>
+	</div>
+
+      </div>
+
+      <div class="notification">
+	<h3>Feature Unavailable:</h3>
+	<p>由于网站目前用的是 Github Pages 的免费服务，现在不能运行注音程序了。 Sorry, we have transitioned to hosting this website on Github Pages, and we can no longer run the Python program required for this tool to work.</p>
+      </div>
+      
+      <h1 class="chinese">拼音标注工具</h1>
+      <hr />
+
+      <!-- EOH -->
+
+      <h2 class="unbold">使用说明:</h2>
+      <ol>
+	<li>准备好需要注音的文件，保存为 .txt 格式（其它格式的文件可以尝试用 Word 等软件“另存为” .txt 格式）。</li>
+	<li>上传，点击注音。注音过程所需的时间取决于文件大小，网站测试时，75 万字（大约是《三国演义》的长短）的书注音需 5-10 秒，更长一些的（如《天龙八部》）可能需要 20 秒 - 1 分钟。</li>
+	<li>注音完成后，结果会以 zip 文件夹的格式下载。</li>
+	<li>解压 zip 文件夹（以确保链接可以使用），注音结果是以 HTML 网页格式保存的，直接双击就可以用浏览器打开。根据原文件大小，注音结果可能会分几页显示（1.html 是第一页）。</li>
+      </ol>
+      <h2 class="unbold">Help:</h2>
+      <ol>
+	<li>Prepare the file to be used and save it in .txt format (if you have another type of file, you can attempt to use the "Save as" feature in software like Word to convert it to .txt).</li>
+	<li>Upload the file and click "注音". The time it takes depends on the size of the file. During testing, a book with about 750,000 characters took 5-10 seconds, while longer titles may require up to a minute to process.</li>
+	<li>When finished, the results will download automatically as a zip folder.</li>
+	<li>Extract the contents of the folder (to make sure links on the page work). The results are saved as HTML pages, and they can typically be opened just by double clicking the file. The results might have been split into several pages depending on the size of the input file (1.html is the first page).</li>
+      </ol>
+
+      <br />
+      <div class="center_form">
+	<form action="" method="post" enctype="multipart/form-data" class="border">
+	<!-- <form action="http://www.abacles.com/cgi-bin/pinyin/upload.cgi" method="post" enctype="multipart/form-data" class="border"> -->
+	  在此上传文件：
+	  <input type="file" accept=".txt" name="fin" required />
+	  <input type="submit" value="注音 &rarr;" />
+	</form>
+      </div>
+      <br />
+      <!-- <hr /> -->
+
+      <p>如果需要注音的文字篇幅较短，您可以直接复制/粘贴，不需要上传文件。因为篇幅短，注音结果会直接在网页上显示，不会自动下载。如果您需要保存注音结果，可以使用浏览器保存网页的功能手动下载。</p>
+      <p>If the text is short, you can use this copy/paste version instead. Notice that the results will be displayed online rather than downloaded. If you need to save the page, please use the browser's built-in functionality to save the HTML code.</p>
+      
+      <div class="center_form">
+	<form action="" method="post" enctype="multipart/form-data">
+	<!-- <form action="http://www.abacles.com/cgi-bin/pinyin/copypaste.cgi" method="post" enctype="multipart/form-data"> -->
+	  <textarea name="text" maxlength="10000" required>飞雪连天射白鹿，笑书神侠倚碧鸳。（金庸的 14 部作品）</textarea>
+	  <br /> <br />
+	  <input type="submit" value="注音 &rarr;" />
+	</form>
+      </div>
+      
+
+      <!-- BOF -->
+
+      <div id="botnav">
+
+	<table id="navmap">
+	  <tr>
+	    <td id="navmap_home" rowspan="6"><a href="../index.html">abacles</a></td>
+	    <td rowspan="4"><a href="../pcprog/index.html">PC ProgTeam</a></td>
+	    <td><a href="../pcprog/about.html">About</a></td>
+	  </tr>
+	  <tr>
+	    <!--<td rowspan="6">Abacles</td>-->
+	    <!--<td rowspan="4">PC ProgTeam</td>-->
+	    <td><a href="../pcprog/comps.html">Competitions</a></td>
+	  </tr>
+	  <tr>
+	    <!--<td rowspan="6">Abacles</td>-->
+	    <!--<td rowspan="4">PC ProgTeam</td>-->
+	    <td><a href="../pcprog/resrc.html">Resources</a></td>
+	  </tr>
+	  <tr>
+	    <!--<td rowspan="6">Abacles</td>-->
+	    <!--<td rowspan="4">PC ProgTeam</td>-->
+	    <td><a href="../pcprog/rtpprogcomp.html">RTP Prog Comp</a></td>
+	  </tr>
+	  <tr>
+	    <!--<td rowspan="6">Abacles</td>-->
+	    <td rowspan="2"><a href="">Tools (not a page)</a></td>
+	    <td><a href="ascii.html">ASCII Table</a></td>
+	  </tr>
+	  <tr>
+	    <!--<td rowspan="6">Abacles</td>-->
+	    <!--<td rowspan="2">Tools (not a page)</td>-->
+	    <td id="navmap_current"><a href="pinyin.html">Pinyin Labeler</a></td>
+	  </tr>
+	</table>
+
+	<a href="#top"><div id="navup">&#8682</div></a>
+	
+      </div>
+      
+    </div>
+    
+  </body>
+  
+
+</html>

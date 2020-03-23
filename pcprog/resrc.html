@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<!--
+    ABACLES
+  -->
+
+<html>
+
+
+  <head>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-68975393-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-68975393-1');
+    </script>
+
+    <title>PCHSPT Resources</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="../basic.css" />
+    <link rel="stylesheet" type="text/css" href="../topnav.css" />
+    <link rel="stylesheet" type="text/css" href="../imgtxt.css" />
+    <link rel="stylesheet" type="text/css" href="../botnav.css" />
+    <link rel="stylesheet" type="text/css" href="../buttons.css" />
+   
+  </head>
+  
+
+  <body>
+
+    <div id="main">
+
+      <div id="topnav">
+
+	<table id="navbar">
+	  <tr>
+	    <td><a href="about.html">About</a></td>
+	    <td><a href="comps.html">Competitions</a></td>
+	    <td><a href="resrc.html">Resources</a></td>
+	  </tr>
+	</table>
+
+	<div id="navlogo_wrap">
+	  <div id="navlogo">
+	    
+	    <a href="../index.html"><img id="main_logo" src="../logo.png" alt="Logo" /></a>
+	    <a href="../index.html">abacles</a>
+	    
+	  </div>
+	</div>
+
+      </div>
+      
+      <h1><span class="hsub">Competitive Programming</span><br />Resources</h1>
+
+      <!-- EOH -->
+
+      <h2>Training Resources</h2>
+      <p>USACO offers its own <a href="http://train.usaco.org/usacogate">training program</a> with a collection of practice problems sorted by increasing difficulty (you cannot access harder problems without solving the easier ones first though). Supports C, C++, PASCAL, Python, and Java.</p>
+      <p><a href="https://open.kattis.com">Kattis</a> is another practice site that also allows users to host their own competitions. It has an extremely large collection of problems and you can do them in any order. It also has a leaderboard and shows each user's rank based on problems solved.</p>
+
+      <h2>ASCII</h2>
+      <p>An incomplete <a href="../tools/ascii.html">ASCII table</a> with only parts that you actually need.</p>
+
+      <h2>Competition Problem Techniques</h2>
+      <p>Here is a short list of common techniques used to solve problems in programming competitions (from USACO Training).</p>
+      <h3>Complete Search</h3>
+      <p>A brute force solution that simply iterates over all possibilities to find the answer. These are usually easy to come up with and implement. However, sometimes it is difficult to recognize that this methodology can be applied to a certain problem. It might only become apparent after realizing some key insights.</p>
+      <h3>Greedy Algorithms</h3>
+      <p>As its name suggests, greedy algorithms always selects the best solution possible at each step. It breaks the task down into smaller subproblems of the same kind, and solves each of them in turn to build the solution. However, you must ensure that your selected solution is a "safe move". Often, the greedy moves are not "safe", therefore the greedy solution usually does not work on all test cases. However, when a greedy solution does work, it is usually easy to implement.</p>
+      <img class="centimg" src="greedy.png" alt="Greedy Algorithms" />
+      <p>Example: fractional knapsack. Given a collection of items that you can put in a knapsack, their respective weights, values, amount available, and the maximum weight capacity of the knapsack, what is the maximum value that you can carry? You may pack fractional amounts of each item.</p>
+      <p>Analysis: in this problem (key point is fractional), the greedy solution is safe. Sort each item by their weight-to-value ratio and always select the item that has the highest value per unit of weight, until it runs out.</p>
+      <object class="progsol" data="knapsack.txt" type="text/plain"></object>
+      <h3>Dynamic Programming</h3>
+      <p>The principle behind dynamic programming is still to break the task down to smaller subproblems, and then build up to a final solution. A technique known as memoization (not memorization) enables you to create dynamic programming solutions that run quickly by storing previous results.</p>
+      <p>Example: coin change. Given a collection of coin values and the amount of money to change, find the minimum number of coins needed to make the change.</p>
+      <p>Analysis: an obvious solution would be to use a greedy algorithm. At each step, take the largest valued coin available. However, although this works on some coin systems (1, 5, 10, 25), it will fail on others. The dynamic programming solution computes all minimum number of coins from changing 0 cents to the amount desired. At each step, it uses previously computed results to determine the next value.</p>
+      <img class="centimg" src="dynamic.png" alt="Dynamic Programming" />
+      <p>In the above image, when computing the minimal number of coins needed to represent 15, we consider using the 3-coin combination for 7 plus the coin that is worth 8,  the 2-coin combination for 10 and adding another 5, or the 3-coin combination for 14 and adding a 1. In this case, the second option is optimal and uses only 3 coins total (3 fives).</p>
+      <object class="progsol" data="coin.txt" type="text/plain"></object>
+      <h3>Dijkstra's Algorithm</h3>
+      <p>Dijkstra's algorithm finds the distance of all nodes in a graph to a certain starting node. It runs in O(E log V) time when using a heap and O(V<sup>2</sup>) time without (E is the number of edges in the graph and V is the number of vertices). However, it cannot handle a graph with negative edge weights.</p>
+      <p>It does the work by the technique relaxation. It considers a path from node<sub>s</sub>, the starting node, to node<sub>i</sub> through a third node that is being processed (node<sub>x</sub>). If the path from node<sub>s</sub> to node<sub>x</sub> and then to node<sub>i</sub> is shorter than the current path from node<sub>s</sub> to node<sub>i</sub>, then the algorithm updates the distance information for node<sub>i</sub>, for a better path is found. At each step, the algorithm selects node<sub>x</sub> which has the least distance to the source node that has not been processed already. The distance for this node will be its final distance. The algorithm then updates distances for nodes adjacent to this node, if a better path through this node can be found.</p>
+      <img class="centimg" src="dijkstra.png" alt="Dijkstra's" />
+      <p>In the image, node 3 is being processed (it has distance 7 to the source node 0). The four edges attached to it are considered, and the edges with weights 7 and 3 will successfully decrease the distance to nodes 5 and 1. Therefore the algorithm will update the distance to node 5 and 1 from infinity to 7 and 3, respectively.</p>
+      <object class="progsol" data="dijkstra.txt" type="text/plain"></object>
+      <h3>Floyd-Warshall Algorithm</h3>
+      <p>This miraculous algorithm calculates the distance between all pairs of nodes in O(V<sup>3</sup>) time with just a couple lines of code.</p>
+      <object class="progsol" data="floyd_warshall.txt" type="text/plain"></object>
+      <h3>Prim's Algorithm</h3>
+      <p>This algorithm finds a minimal spanning tree given a graph greedily. At each step it adds in the closest node to the current tree.</p>
+      <img class="centimg" src="mst.png" alt="MST" />
+      <object class="progsol" data="prim.txt" type="text/plain"></object>
+      
+      <div class="box">
+	<a class="button rightfloat" href="index.html">Back</a>
+      </div>
+
+      <!-- BOF -->
+
+      <div id="botnav">
+
+	<table id="navmap">
+	   <tr>
+	    <td id="navmap_home" rowspan="6"><a href="../index.html">abacles</a></td>
+	    <td rowspan="4"><a href="index.html">PC ProgTeam</a></td>
+	    <td><a href="about.html">About</a></td>
+	  </tr>
+	  <tr>
+	    <!--<td rowspan="6">Abacles</td>-->
+	    <!--<td rowspan="4">PC ProgTeam</td>-->
+	    <td><a href="comps.html">Competitions</a></td>
+	  </tr>
+	  <tr>
+	    <!--<td rowspan="6">Abacles</td>-->
+	    <!--<td rowspan="4">PC ProgTeam</td>-->
+	    <td id="navmap_current"><a href="resrc.html">Resources</a></td>
+	  </tr>
+	  <tr>
+	    <!--<td rowspan="6">Abacles</td>-->
+	    <!--<td rowspan="4">PC ProgTeam</td>-->
+	    <td><a href="rtpprogcomp.html">RTP Prog Comp</a></td>
+	  </tr>
+	  <tr>
+	    <!--<td rowspan="6">Abacles</td>-->
+	    <td rowspan="2"><a href="">Tools (not a page)</a></td>
+	    <td><a href="../tools/ascii.html">ASCII Table</a></td>
+	  </tr>
+	  <tr>
+	    <!--<td rowspan="6">Abacles</td>-->
+	    <!--<td rowspan="2">Tools (not a page)</td>-->
+	    <td><a href="../tools/pinyin.html">Pinyin Labeler</a></td>
+	  </tr>
+	</table>
+
+	<a href="#top"><div id="navup">&#8682</div></a>
+	
+      </div>
+      
+    </div>
+    
+  </body>
+  
+
+</html>

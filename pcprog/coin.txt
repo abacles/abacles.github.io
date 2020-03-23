@@ -1,0 +1,15 @@
+def change(val, coins):
+    # For changing 0 cents, you need 0 coins
+    coins_needed = [0]
+    while len(coins_needed) <= val:
+        # Change len(coins_needed)
+        best = 99999 # arbitrarily big value representing infinity
+        for c in coins:
+            # Check if this coin is less than or equal to the value we're changing and yields a better solution
+            if c <= len(coins_needed) and coins_needed[-c] + 1 < best:
+                best = coins_needed[-c] + 1
+        coins_needed.append(best)
+    # Return last element
+    return coins_needed[-1]
+
+print(change(15, [1,5,8]))

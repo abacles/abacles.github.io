@@ -1,0 +1,15 @@
+def knapsack(total_weight, item_weights, item_vals):
+    # sort all (item number, value per unit weight) pairs based on value per unit weight
+    unit_vals = sorted([(i,item_vals[i] / item_weights[i]) for i in range(len(item_weights))], key = lambda x: x[1])
+    val = 0
+    while total_weight > 0:
+        # get and remove item with highest value per unit weight
+        item = unit_vals.pop()
+        # item[0] is the item number (index in item_weights and item_vals)
+        amount = min(total_weight, item_weights[item[0]])
+        # item[1] is the value per unit weight
+        val += amount * item[1]
+        total_weight -= amount
+    return val
+
+print(knapsack(7, [4,3,2], [20,18,14]))

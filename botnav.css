@@ -1,0 +1,114 @@
+/*
+  ABACLES
+*/
+
+
+#botnav
+{
+    margin-top: 25px;
+    width: 100%;
+}
+
+
+@media screen and (max-width: 600px)
+{
+    #navmap
+    {
+	display: none;
+    }
+    #navup
+    {
+	width: 100%;
+	height: 40px;
+	border-bottom: 3px solid rgb(40,100,200);
+	text-align: center;
+	line-height: 40px;
+	font-size: 20px;
+	color: rgb(40,100,200);
+    }
+}
+
+
+@media screen and (min-width: 601px)
+{
+    #botnav
+    {
+	background-color: rgb(250,250,250);
+    }
+    #navmap
+    {
+	width: 100%;
+	border-top: 5px solid rgb(40,100,200);
+	border-bottom: 5px solid rgb(250,250,250);
+    }
+    #navmap *
+    {
+	transition-duration: 0.3s;
+    }
+    #navmap td
+    {
+	overflow: hidden;
+	font-size: 1.2vw;
+    }
+    #navmap a
+    {
+	margin: -30% 0%; /* make the link fill up entire td */
+	padding: 32% 3%;
+	width: 100%;
+	display: block;
+	color: rgb(100,100,100);
+	font-weight: lighter;
+    }
+    #navmap_home
+    {
+	width: 15%; /* set to small value to avoid stretching */
+	text-align: center;
+    }
+    #navmap_home a /* increases importance */
+    {
+	font-size: 2vw;
+    }
+    #navmap_current a
+    {
+	font-weight: bold;
+	color: rgb(40,100,200);
+    }
+    #navmap_home_current
+    {
+	width: 15%;
+	text-align: center;
+    }
+    #navmap_home_current a
+    {
+	font-size: 2vw;
+	font-weight: bold;
+	color: rgb(40,100,200);
+    }
+
+    #navmap:hover #navmap_current a
+    {
+	color: rgb(100,100,100);
+    }
+    #navmap:hover #navmap_home_current a
+    {
+	color: rgb(100,100,100);
+    }
+    #navmap td:hover a
+    {
+	color: rgb(40,100,200);
+    }
+    /* fix for hover over navmap_current; specify #navmap to increase importance */
+    #navmap #navmap_current:hover a
+    {
+	color: rgb(40,100,200);
+    }
+    #navmap #navmap_home_current:hover a
+    {
+	color: rgb(40,100,200);
+    }
+
+    #navup
+    {
+	display: none;
+    }
+}

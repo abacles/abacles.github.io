@@ -1,0 +1,172 @@
+/*
+  ABACLES
+*/
+
+
+/* nav container */
+#topnav
+{
+    overflow: auto; /* elements are float and are not counted in height */
+    margin-bottom: 15px;
+}
+
+/* nav bar */
+#navbar
+{
+    float: left;
+    /*border-collapse: collapse;*/
+}
+#navbar td
+{
+    text-align: center;
+}
+#navbar a
+{
+    display: block;
+    color: rgb(200,200,200);
+}
+#navbar td:hover a
+{
+    color: rgb(40,100,200);
+    transition-duration: 0.2s;
+}
+
+/* nav logo */
+#navlogo_wrap
+{
+    float: right;
+    direction: rtl;
+}
+#navlogo
+{
+    display: inline-block;
+}
+#navlogo a
+{
+    display: inline-block;
+    float: right;
+    font-weight: lighter;
+    color: rgb(200,200,200);
+}
+#navlogo:hover a
+{
+    color: rgb(40,100,200);
+    transition-duration: 1s;
+}
+#main_logo
+{
+    display: block;
+}
+
+
+@media screen and (max-width: 850px)
+{
+    #navbar
+    {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	background-color: rgba(255,255,255,0.8);
+    }
+    #navbar td
+    {
+	padding: 5px;
+	border-top: 5px solid rgb(40,100,200);
+	font-size: 3vw;
+    }
+    #navbar td:hover
+    {
+	background-color: rgb(250,250,250);
+	transition-duration: 0.2s;
+    }
+    
+    #navlogo_wrap
+    {
+	width: 100%;
+    }
+    #navlogo
+    {
+	margin-top: 20px;
+	height: 64px;
+    }
+    #navlogo a
+    {
+	line-height:64px;
+	font-size: 6vw;
+    }
+    #main_logo
+    {
+	width: 64px;
+	height: 64px;
+    }
+}
+
+/* font size fix */
+@media screen and (min-width: 500px) and (max-width: 850px)
+{
+    #navbar td
+    {
+	font-size: 15px;
+    }
+    #navlogo a
+    {
+	font-size: 30px;
+    }
+}
+
+
+@media screen and (min-width: 851px)
+{
+    #navbar
+    {
+	width: 50%;
+	height: 64px;
+	margin: 32px 0px;
+    }
+    #navbar td
+    {
+	font-size: 1.8vw;
+	border-bottom: 3px solid #aac8ff;
+    }
+    #navbar a
+    {
+	line-height: 64px;
+    }
+    #navbar td:hover
+    {
+	border-bottom: 3px solid rgb(40,100,200);
+    }
+    
+    #navlogo_wrap
+    {
+	width: 50%;
+    }
+    #navlogo
+    {
+	height: 128px;
+    }
+    #navlogo a
+    {
+	line-height: 128px;
+	font-size: 5vw;
+    }
+    #main_logo
+    {
+	width: 128px;
+	height: 128px;
+    }
+}
+
+/* font size fix */
+@media screen and (min-width: 1200px)
+{
+    #navbar td
+    {
+	font-size: 20px;
+    }
+    #navlogo a
+    {
+	font-size: 60px;
+    }
+}

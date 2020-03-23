@@ -1,0 +1,48 @@
+/*
+  ABACLES
+*/
+
+
+.ixsplit /* image-text split */
+{
+    width: 100%;
+}
+
+
+@media screen and (max-width: 866px)
+{
+    .ixsplit_img_container
+    {
+	width: 100%;
+    }
+    .ixsplit_img
+    {
+	width: 100%;
+    }
+}
+
+
+@media screen and (min-width: 867px)
+{
+    .ixsplit
+    {
+	display: table;
+    }
+    .ixsplit_img_container
+    {
+	width: 50%;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+    }
+    .ixsplit_img
+    {
+	width: 100%;
+    }
+    .ixsplit_txt
+    {
+	width: 50%;
+	display: table-cell;
+	vertical-align: middle;
+    }
+}

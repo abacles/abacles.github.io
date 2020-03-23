@@ -1,0 +1,20 @@
+def floyd_warshall(g):
+    size = len(g)
+    for k in range(size):
+        for i in range(size):
+            for j in range(size):
+                # k is intermediate node
+                if g[i][k] + g[k][j] < g[i][j]:
+                    g[i][j] = g[i][k] + g[k][j]
+    print(g)
+
+inf = 99999 # representing infinity, or unreachable
+# Graph in adjacency matrix form
+graph = [[0,inf,5,8,inf,inf],
+         [inf,0,inf,3,6,2],
+         [5,inf,0,2,3,inf],
+         [8,3,2,0,inf,7],
+         [inf,6,3,inf,0,inf],
+         [inf,2,inf,7,inf,inf,0]]
+
+floyd_warshall(graph)
