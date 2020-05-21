@@ -1,0 +1,133 @@
+body
+{
+    padding: 15px 40px 15px 40px;
+    background-color: #fffefa;
+    /* background-color: #deffee; */
+    /* background-color: #e6fcfc; */
+    /* background-color: #0f0f12; */
+    /* color: #fafafa; */
+    font-family: simsun, serif;
+}
+
+.colored_heading
+{
+    color: #0b43a3;
+}
+
+h1
+{
+    font-weight: normal;
+}
+
+h1.boldtitle
+{
+    font-size: 50px;
+    font-weight: bold;
+}
+
+p
+{
+    font-size: 20px;
+    letter-spacing: 3px;
+}
+
+table.pinyin
+{
+    table-layout: fixed;
+}
+
+table.pinyin td
+{
+    width: 45px;
+    text-align: center;
+}
+
+table.pinyin tr:nth-child(even)
+{
+    height: 40px;
+}
+
+table.pinyin tr:nth-child(even) td
+{
+    font-size: 25px;
+}
+
+table.pinyin tr:nth-child(odd)
+{
+    font-family: "Times New Roman", Times, serif;
+}
+
+ul.mulu
+{
+    padding: 0px 15px;
+}
+
+ul.mulu li
+{
+    list-style: none;
+    margin: 15px 0px;
+    font-size: 18px;
+}
+
+ul.mulu li a:link
+{
+    text-decoration: none;
+    color: #4c2485;
+}
+ul.mulu li a:hover
+{
+    text-decoration: underline;
+}
+
+div.pageflip
+{
+    height: 50px;
+    margin: 50px 0px;
+}
+
+div.pageflip a
+{
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 5px 8px;
+    background-color: #aac8ff;
+    box-shadow: 0px 5px #ccdeff;
+    border-radius: 5px;
+    color: #2864c8;
+}
+
+div.pageflip a:hover
+{
+    background-color: #8cb4ff;
+    box-shadow: 0px 5px #aac8ff;
+    color: #ffffff;
+    transition-duration: 0.2s;
+}
+
+ul.booklist
+{
+    list-style: none;
+    padding: 0px 20px;
+    overflow: auto;
+}
+
+ul.booklist li a
+{
+    float: left;
+    width: 20px;
+    height: 120px;
+    padding: 10px 20px;
+    margin: 0px 10px 15px 0px;
+    background-color: #aac8ff;
+    box-shadow: 0px 5px #ccdeff;
+    text-decoration: none;
+    color: #2864c8;
+}
+
+ul.booklist li a:hover
+{
+    background-color: #0b43a3;
+    box-shadow: 0px 5px #aac8ff;
+    color: #ffffff;
+    transition-duration: 0.2s;
+}
