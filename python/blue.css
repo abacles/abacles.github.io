@@ -1,0 +1,99 @@
+body
+{
+    padding: 15px 10%;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.5;
+}
+
+.colored
+{
+    color: #0b43a3;
+}
+
+hr
+{
+    border: 0.5px solid #eaecef;
+    margin-bottom: 30px;
+}
+
+code
+{
+    font-family: "SFMono-Regular", Menlo, monospace;
+    font-size: 15px;
+}
+
+pre
+{
+    font-family: "SFMono-Regular", Menlo, monospace;
+    font-size: 15px;
+    padding: 15px 20px;
+    border-radius: 3px;
+    white-space: pre-wrap;
+}
+
+pre.code
+{
+    background-color: #f0f2f5;
+}
+
+pre.out
+{
+    border: 1px solid #2864c8;
+}
+
+a
+{
+    color: #0b43a3;
+    outline: none;
+}
+
+a:link
+{
+    text-decoration: none;
+}
+
+a:hover
+{
+    text-decoration: underline;
+}
+
+div.pageflip
+{
+    height: 50px;
+    margin: 50px 0px;
+}
+
+div.pageflip a
+{
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 5px 8px;
+    background-color: #aac8ff;
+    box-shadow: 0px 5px #ccdeff;
+    border-radius: 5px;
+    color: #2864c8;
+}
+
+div.pageflip a:hover
+{
+    background-color: #8cb4ff;
+    box-shadow: 0px 5px #aac8ff;
+    color: #ffffff;
+    transition-duration: 0.2s;
+}
+
+div.colortop
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background-image: linear-gradient(to right, #aac8ff, #0079db);
+}
+
+div.indent
+{
+    border-left: 5px solid #c4ddff;
+    padding-left: 3%;
+}

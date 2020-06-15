@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<!--
+    ABACLES
+  -->
+
+<html>
+
+  <head>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-68975393-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-68975393-1');
+    </script>
+
+    <title>Python Tutorial: Introduction to Python</title>
+    <link rel="stylesheet" type="text/css" href="blue.css" />
+    
+  </head>
+
+  <body>
+
+    <div class="colortop"></div>
+
+    <h1 class="colored">Introduction to Python</h1>
+    <hr />
+
+    <p>Python is a programming language created around 1991, and it has became increasingly popular recently. We'll be using Python 3, which was released in 2008. <a href="https://www.python.org/">Python's official website</a> includes installation options and the documentation.</p>
+
+    <p>A program is a sequence of instructions for the computer to follow. <code>print()</code>, one of the most fundamental "instructions", allows the computer to communicate with you by printing (displaying) something to the screen.</p>
+
+    <p>The "hello, world!" program written in Python 3 is:</p>
+    <pre class="code">
+print('hello, world!')</pre>
+    <p>The outputs produced when the program is executed are:</p>
+    <pre class="out">hello, world!</pre>
+
+    <p>The <code>print()</code> function will output whatever you put in the parentheses, which is "hello, world!" in this case. The text "hello, world!" is put in single-quotes to denote that it is a string (human text) and not more computer code. Here are some more examples of <code>print()</code>:</p>
+    <pre class="code">
+print('Python is not actually named after the reptile, but a British comedy group called the Monty Python.')
+print()
+print(3.14)
+print('The year is 2020 and everyone is stuck at home!')</pre>
+    <p>The outputs:</p>
+    <pre class="out">
+Python is not actually named after the reptile, but a British comedy group called the Monty Python.
+
+3.14
+The year is 2020 and everyone is stuck at home!</pre>
+
+    <p>Some key takeaways so far:</p>
+    <ul>
+      <li>The computer executes code line by line in the order that they appear in the program (you can manipulate this with "control flow", which we'll discuss later)</li>
+      <li>Strings (human text) are enclosed in single- or double-quotes to differentiate them from code, while numbers like 3.14 and 2 are not</li>
+      <li><code>print()</code> outputs everything you put between the parentheses, which can be strings or numbers</li>
+      <li>You can even give <code>print()</code> multiple things to output by separating them with commas like <code>print('pi =', 3.1415926, 'approximately')</code>. Python will print each of them in order with spaces in between. This would give the same results as <code>print('pi = 3.1415926 approximately')</code></li>
+    </ul>
+
+    <div class="indent">
+      <p>Try: use 3 <code>print()</code>s to output "Python says hi!", "e is roughly 2.718", and "qwerty" on three different lines.</p>
+    </div>
+
+    <hr />
+
+    <h2 class="colored">Errors</h2>
+
+    <p>Programs don't always work. Sometimes our code violates rules of the Python language, and it stops running. This code snippet contains some errors:</p>
+
+    <pre class="code">
+print('To be, or not to be, that is the question:&quot;)
+print("Whether 'tis nobler in the mind to suffer...")
+print()
+print(-- Hamlet (Act 3, Scene 1))</pre>
+
+    <p>Python will usually tell you what type of error occurred and on which line it thinks the error is. However, the error messages are not always beginner-friendly. It takes some practice to become good at spotting these errors.</p>
+
+    <div class="indent">
+      <p>Try: run the code above and take a look at the error messages, then fix them.</p>
+    </div>
+
+    <hr />
+
+    <h2 class="colored">Math</h2>
+
+    <p>We've mentioned the two most important types of data that the computer works with: numbers and strings. Let's get into some more details.</p>
+    <ul>
+      <li>Examples of strings: <code>"You can include 'single-quotes' in a double-quote string!"</code>, <code>'Strings can include numbers in them 123454321'</code>, <code>'1024'</code> (this is still a string and not a number), <code>''</code> (empty string)</li>
+      <li>Integers are numbers without decimals: <code>3</code>, <code>15</code>, <code>0</code>, <code>-1</code>, <code>100000</code></li>
+      <li>Floats are numbers with decimal parts: <code>9.5</code>, <code>0.3</code>, <code>4.0</code>, <code>-7.8</code></li>
+    </ul>
+
+    <pre class="code">
+print('You can do math with Python using +, -, *, and /')
+print(1 + 1)
+print(55 - 32)
+print(3 * 5.1)
+print(20 / 6)</pre>
+    <pre class="out">
+You can do math with Python using +, -, *, and /
+2
+23
+15.299999999999999
+3.3333333333333335</pre>
+
+    <p>Math with decimals can be slightly off due to inherent limits in how the computer stores numbers, but this generally won't be a big issue.</p>
+
+    <pre class="code">
+# This line is a comment. It's ignored by Python.
+# <- Comments start with the number sign
+# Comments are useful as notes so that you can remember what a piece of code does
+
+print('***** fancy text *****') # comments can start here too
+
+# you can add (combine) two strings together
+print('water' + 'melon')
+# or repeat a string multiple times
+print(':)' * 5)
+print('wo' * 3 + 'w')</pre>
+     <pre class="out">
+***** fancy text *****
+watermelon
+:):):):):)
+wowowow</pre>
+
+    <p>You can also use extra parentheses to group things and specify the order of operations: <code>print((3+5) * (6+7))</code>, <code>print(10 * (6 - (2+3)))</code>.</p>
+
+    <p>To calculate exponents, use <code>**</code> (e.g., <code>5**2</code>).</p>
+
+    <p>There's one more math operator that programmers often use: <code>%</code>. It calculates the remainder when the two numbers are divided. For instance, <code>5%3</code> is equal to 2 because 5 divided by 3 has remainder 2. <code>26%10</code> is equal to 6, and <code>100%2</code> is equal to 0.</p>
+
+    <div class="indent">
+      <p>Try:<br />
+	Use Python to calculate (35-7) * 103.<br />
+	Use Python to calculate the area of a circle with a radius of 2.5 meters.<br />
+	Use Python to calculate 2 to the 20th power.<br />
+	Print out "xyz" repeated 10 times.</p>
+    </div>
+
+    <hr />
+
+    <h2 class="colored">Variables</h2>
+
+    <p>You can tell Python to store some values that you may want to use for later with variables. A variable is like a storage box in the computer memory in which you can put things, including strings and numbers. You can change the value of the variable over time as necessary.</p>
+
+    <pre class="code">
+# year is a variable, and we're assigning the value 2020 to it
+year = 2020
+print(year)</pre>
+    <pre class="out">2020</pre>
+
+    <p>A variable is created when you give it a value (like putting something into the storage box). In this example, we're giving the variable year the value 2020, and for the rest of this program, Python will remember that year has the value 2020. Therefore, printing the variable year outputs 2020. Note that we don't put quotations around year when printing it, because if we did Python would treat it as a string and print the word "year" instead.</p>
+    <p>You can give your variables any name using letters, numbers, and underscores (no spaces and must start with a letter or underscore) as long as it doesn't conflict with reserved keywords. It is usually helpful to name your variables with something that helps you remember what the variable is storing. Also, note that Python variable names are case-sensitive.</p>
+
+    <pre class="code">
+description = 'sunset'
+hour = 6
+minute = 52
+
+print("It's", description, "right now, and the time is", hour, ":", minute)</pre>
+    <pre class="out">It's sunset right now, and the time is 6 : 52</pre>
+
+    <p>In this example above, we gave <code>print()</code> six things to output, and <code>print()</code> conveniently inserts spaces between them for us. Because <code>description</code> is a string, we could also write <code>print("It's " + description + " right now...")</code>, but we would have to add a space after "It's" and before "right".</p>
+    <p>Let's take a look at a slightly more complex example:</p>
+
+    <pre class="code">
+a = 3
+b = 4
+print(a + b)
+
+a = 5
+b = 7
+print(a + b)
+
+a = 3
+c = a + b
+print(c)
+print(c * c)</pre>
+    <pre class="out">
+7
+12
+10
+100</pre>
+
+    <p>As you see, you can change the value of a variable simply by assigning a new value to it.</p>
+
+    <p>Finally, it's often useful to convert one type of data to another type. For example, to convert the string <code>'1024'</code> to an actual number (integer), we use <code>int('1024')</code>. Similar to <code>int()</code>, there is also <code>float()</code> and <code>str()</code>. Use the exercises below to play around with these functions.</p>
+
+    <div class="indent">
+      <p>Try:<br />
+	Create a variable <code>side_length</code> and assign 10 to it. Print out the area of a square with this side length, and then change the value of <code>side_length</code> to 15 and print again.<br />
+	Write a program that prints out "Python 3" using a string variable with the value "Python" and an integer variable with value 3.<br />
+	Create a variable <code>x = '56'</code>. Observe the behavior of <code>print(x + 44)</code> and <code>print(int(x) + 44)</code>.<br />
+	Create a variable <code>y = 12</code>. Observe the behavior of <code>print(y + ' donuts')</code> and <code>print(str(y) + ' donuts')</code>.<br />
+	Create a variable <code>celsius</code> and assign 26 to it. Make another variable <code>fahrenheit</code> to be equal to the corresponding converted temperature (using <code>celsius</code>). Print out both. Now, by changing <code>celsius</code>, you should be able to see the equivalent Fahrenheit temperature.</p>
+    </div>
+     
+  </body>
+
+</html>
