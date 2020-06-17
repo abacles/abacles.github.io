@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<!--
+    ABACLES
+  -->
+
+<html>
+
+  <head>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-68975393-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-68975393-1');
+    </script>
+
+    <title>Python Tutorial: Inputs and If Statements</title>
+    <link rel="stylesheet" type="text/css" href="blue.css" />
+    
+  </head>
+
+  <body>
+
+    <div class="colortop"></div>
+
+    <h1 class="colored">Inputs and If Statements</h1>
+    <hr />
+
+    <p><em>A brief note regarding functions:</em> <code>print()</code>, <code>int()</code>, <code>float()</code>, and <code>str()</code> are all examples of functions (notice how all of them are followed by a set of parentheses). We'll delve into the details of functions (and how to create our own) later on, but for now think of functions as "mini programs" that perform specific tasks for us. We could give the <code>int()</code> function a decimal like 5.8, and it will round it down to the nearest integer and give us back 5. Read this diagram by following the arrows, starting at the top.</p>
+
+    <pre class="freeform">
+                                <span class="light">what we feed into the function</span>
+                                              |
+                                              v
+<span class="light">what the function gives back to us:</span> 5 &lt;- int(5.8)</pre>
+    <p>What we've illustrated here is that we feed data into a function (and put it in the parentheses), the function processes it, and then gives something back to us (called the return value). In this case, we fed 5.8 into the function <code>int()</code>, and the return value was 5.</p>
+    <p>Perhaps the <code>max()</code> function illustrates this point better. <code>max()</code> takes in a number of values (separated by commas) and returns the largest of them. The arrows again indicate what we feed into the function and what it returns to us.</p>
+
+    <pre class="freeform">
+              |                                  |
+              v                                  v
+14 &lt;- max(10, 8, 14)               240 &lt;- max(240, 20)</pre>
+
+    <p>In <code>print(max(10, 8, 14))</code>, we've nested the <code>print()</code> and <code>max()</code> functions. The return value of the <code>max()</code> function becomes what we feed into <code>print()</code> because it's enclosed in the set of parentheses corresponding to <code>print()</code>.</p>
+
+    <pre class="freeform">
+              | <span class="light">we feed 10, 8, and 14 into max()</span>
+              v
+<span class="light">print(</span>max(10, 8, 14)<span class="light">)</span>
+             |
+      *------*  <span class="light">max(10, 8, 14) evaluates to 14;</span>
+      |         <span class="light">14 is fed into print()</span>
+      v
+print(14)</pre>
+
+    <hr />
+
+    <h2 class="colored">Inputs</h2>
+
+    <p>The "opposite" to the <code>print()</code> function is the <code>input()</code> function. Instead of displaying something to you, it allows you to type something into the computer. <code>input()</code> returns what the user typed as a string, and you can then assign that to a variable to use it later.</p>
+
+    <pre class="code">
+print('Type something below:')
+message = input()
+print('You said', message)</pre>
+    <pre class="out">
+Type something below:
+<span class="light">the sky is blue</span>
+You said the sky is blue</pre>
+
+    <p>We colored the inputs we typed in light gray. After we press enter to send the inputs through, the variable <code>message</code> would be assigned the value of <code>'the sky is blue'</code>.</p>
+
+    <p>One thing to notice is that the <code>input()</code> function always returns (gives you) a string, even if the actual inputs were meant as numbers. For instance, if we typed in the number 5, <code>input()</code> would give you <code>'5'</code> instead. To address this, we need to use <code>int()</code> to convert our inputs to numbers.</p>
+
+    <pre class="code">
+print('Enter a number:')
+a = int(input()) # gets some input, and convert it to a number
+print('Enter another number:')
+b = int(input())
+print(a + b)</pre>
+    <pre class="out">
+Enter a number:
+<span class="light">12</span>
+Enter another number:
+<span class="light">15</span>
+27</pre>
+
+    <div class="indent">
+      <p>Try:<br />
+	Get two strings <code>first_name</code> and <code>last_name</code> using <code>input()</code>s, then print out the full name.<br />
+	Get 3 numbers using <code>input()</code>s, convert them using <code>int()</code>, then use <code>max()</code> and <code>print()</code> to output the largest one.</p>
+    </div>
+
+    <hr />
+
+    <h2 class="colored">If Statements</h2>
+
+    <p>You can create programs that make decisions using if statements. Often, you'll want your program to behave differently in different situations (perhaps based on the inputs of the user). An if statement allows you to do exactly that. It runs a block of code only if a certain condition is met:</p>
+
+    <pre class="code">
+print('Enter your age:')
+age = int(input())
+if age >= 15:
+    print('You can learn to drive and get a permit.')
+    print('At age 18, you will be able to get a full license.')
+print('...')</pre>
+    <pre class="out">
+Enter your age:
+<span class="light">17</span>
+You can learn to drive and get a permit.
+At age 18, you will be able to get a full license.
+...</pre>
+
+    <p>Here, Python checks if the value of <code>age</code> is greater than or equal to 15. If it is, then the block of code that is indented will be executed. Otherwise, it ignores the indented block of code and goes straight to <code>print('...')</code>. The dots are always printed out regardless of the value of <code>age</code> because it is not part of the indented block.</p>
+    <p>These are the parts of a typical if statement:</p>
+    <ul>
+      <li>The keyword "if"</li>
+      <li>A condition, often a logical comparison using <br /><code>&lt;</code> (less than), <br /><code>&gt;</code> (greater than), <br /><code>&lt;=</code> (less than or equal to), <br /><code>&gt;=</code> (greater than or equal to), <br /><code>==</code> (equal to), <br />or <code>!=</code> (not equal to)</li>
+      <li>The colon (:)</li>
+      <li>An indented block of code</li>
+    </ul>
+
+    <p>A typical mistake is using "=" when "==" should have been used. Remember that "=" means variable assignment, while "==" means comparison. Also, because indentation is important in Python, make sure that your code within the if block is properly aligned.</p>
+
+    <p>Optionally, you can add multiple <code>elif</code>s (else if) and an <code>else</code> to go with an if statement. <code>elif</code> allows you to test one or more other conditions, and <code>else</code> provides an "otherwise" case if none of the tests above evaluated to <code>True</code>.</p>
+
+    <pre class="code">
+print('Would you like to take the subway or the bus?')
+transportation = input()
+if transportation == 'subway':
+    print('Take line 13, then transfer to line 5.')
+elif transportation == 'bus':
+    print('Take bus 392.')</pre>
+    <pre class="out">
+Would you like to take the subway or the bus?
+<span class="light">bus</span>
+Take bus 392.</pre>
+
+    <p>An <code>elif</code> clause is only tested if all the <code>elif</code>s and <code>if</code> above it tested to <code>False</code> (hence the name else if). As soon as one of the clauses tests to <code>True</code>, its corresponding block of code is executed, and all the following <code>elif</code>s and <code>else</code> are ignored. In other words, only one <code>if</code>/<code>elif</code>/<code>else</code> block will be executed.</p>
+
+    <pre class="code">
+print('Enter a number:')
+a = int(input())
+print('Enter another number:')
+b = int(input())
+
+if a < b:
+    print(a, 'is less than', b)
+elif a > b:
+    print(a, 'is greater than', b)
+else:
+    print('They are equal!')</pre>
+    <pre class="out">
+Enter a number:
+<span class="light">6</span>
+Enter another number:
+<span class="light">6</span>
+They are equal!</pre>
+
+    <p>You don't specify a condition for <code>else</code> because it's the "otherwise" case.</p>
+    <p>The code above could be summarized in this diagram:</p>
+    <pre class="freeform">
+<span class="light"># getting inputs...</span>
+        |
+        v        <span class="light">No                    No</span>
+    if a < b:  ------>  elif a > b:  ------> else:
+        |                    |                 |
+        | <span class="light">Yes</span>                | <span class="light">Yes</span>             |
+        v                    v                 v
+  print('Less')       print('Greater')    print('Equal')
+        |                    |                 |
+        |--------------------*-----------------*
+        |
+	v</pre>
+
+    <p>Let's take a look at one last (more complicated) example.</p>
+
+    <pre class="code">
+print('Quiz time! Enter your name:')
+name = input()
+num_correct = 0 # how many questions you answered correctly
+
+if name == 'secret answer key':
+    print('*** The answers are 5, 26, and 8 ***')
+else:
+    # Question 1
+    print('155 / 31 = ')
+    answer = int(input())
+    if answer == 5:
+        print('Correct!')
+        num_correct = num_correct + 1
+    else:
+        print('The correct answer was 5.')
+
+    # Question 2
+    print('How many letters are there in the English alphabet?')
+    answer = int(input())
+    if answer == 26:
+        print('Correct!')
+        num_correct = num_correct + 1
+    else:
+        print('The correct answer was 26.')
+
+    # Question 3
+    print('How many planets are there in the Solar System?')
+    answer = int(input())
+    if answer == 8:
+        print('Correct!')
+        num_correct = num_correct + 1
+    elif answer == 9:
+        print('Very close, but not quite!')
+    else:
+        print('The correct answer was 8.')
+
+    print(name + ', you got ' + str(num_correct) + ' out of 3 points.')</pre>
+    <pre class="out">
+Quiz time! Enter your name:
+<span class="light">mozart</span>
+155 / 31 =
+<span class="light">5</span>
+Correct!
+How many letters are there in the English alphabet?
+<span class="light">26</span>
+Correct!
+How many planets are there in the Solar System?
+<span class="light">9</span>
+Very close, but not quite!
+mozart, you got 2 out of 3 points.</pre>
+    
+    <p>When you have if statements within other if statements like in this example above, make sure that your indentation levels are consistent.</p>
+
+    <p>Finally, you can use the <code>and</code>, <code>or</code>, and <code>not</code> operators to combine multiple conditions in a single if statement. For instance, the following code only prints "Sad day" if both the conditions are met.</p>
+
+    <pre class="code">
+weather = input()
+day = input()
+if weather == 'rainy' and day == 'Monday':
+    print('Sad day')</pre>
+
+    <div class="indent">
+      <p>Try:<br />
+	Create a number guessing game. Make a variable called <code>secret</code> and give it a value between 1 and 10. Use <code>input()</code>s to give the player 3 guesses to figure out what this number is. After each guess, tell the player whether their guess was too high, too low, or correct.<br />
+	(Continuing the previous exercise) Change <code>secret</code> to be equal to <code>random.randint(1, 10)</code> instead. This would automatically generate a random number between 1 and 10. Also, add the line <code>import random</code> at the very top of your program.<br />
+	Create an ATM simulator. Initialize the variable <code>balance = 100</code>. Ask the user whether they want to withdraw or deposit money and the amount, and then update the variable <code>balance</code> to reflect the change. If the user wanted to withdraw, also check if they have enough money to do so. Print out their new balance afterwards. Optionally, you can also ask for a password at the beginning!<br />
+	Create a text adventure game. At each step, you should give the player two actions to choose from. Then, the story should unfold according to the choice that the player made. If you want, you can use <a href="adventure.txt" target="_blank">this story</a>.</p>
+    </div>
+
+    <div class="pageflip">
+      <a href="intro.html">&lt;--</a>
+      <a>#</a>
+      <a>--&gt;</a>
+    </div>
+
+  </body>
+
+</html>

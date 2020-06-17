@@ -1,0 +1,23 @@
+Text adventure game
+
+You find yourself in a large cave, with a waterfall blocking the mouth of the cave. Do you (1) climb through the waterfall to exit the cave or (2) go deeper into the cave to explore?
+
+(1) Although you’re wet after climbing through the waterfall, you come out safely. You’re now standing in a crystal blue lake, and the water is not very deep. Do you (3) take a quick swim in the lake or (4) go to the shore?
+
+(3) *Game over* You were stung by a poisonous jelly fish.
+
+(4) You see a pile of bananas next to a tree on your right and a big bright red mushroom on your left. Since you’re quite hungry, you decide to grab one of them. Do you take (5) the bananas or (6) the mushroom?
+
+(5) *Game over* You were attacked by a monkey who’s guarding the bananas from the tree above.
+
+(6) *You survived!* Your adventure ended safely.
+
+(2) As you wander deeper into the cave, you realize the cave slopes down and narrows, and eventually you reach an underground river that flows rather rapidly. You pull out your flashlight from your bag. Surprisingly, there’s a small boat tied to the bank of the underground river. Do you (7) take the boat or (8) walk along the river?
+
+(7) After 15 minutes of exciting rafting in the underground river, the water carries you out of the cave and into a small pond. You find an ancient sword in a box on your boat with beautiful engravings on it. *Congratulations!*
+
+(8) You spot a rusted treasure chest half buried in the ground, and you find some pearls, diamonds, and jades inside. You also find a side branch in the cave system, leading to an even narrower passage. Do you (9) keep walking along the underground river or (10) explore the side passage?
+
+(9) *Congratulations!* You eventually exit the cave into a small pond safely, and you take the treasures you found with you.
+
+(10) *Game over* After a long time exploring, you lost your way in this complex network of caves.
