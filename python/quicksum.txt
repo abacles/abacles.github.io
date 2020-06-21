@@ -1,0 +1,11 @@
+Enter a number:
+5
+Next number:
+2
+Next number:
+18
+Next number:
+23
+Next number:
+0
+The sum is 48

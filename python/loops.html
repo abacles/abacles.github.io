@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<!--
+    ABACLES
+  -->
+
+<html>
+
+  <head>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-68975393-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-68975393-1');
+    </script>
+
+    <title>Python Tutorial: Loops</title>
+    <link rel="stylesheet" type="text/css" href="blue.css" />
+    
+  </head>
+
+  <body>
+
+    <div class="colortop"></div>
+
+    <h1 class="colored">Loops</h1>
+    <hr />
+
+    <p>Often, you might want to run a piece of code in your program multiple times, and loops offer one way to do that. As a motivating example, let's use the number guessing game we created previously. We're taking it to the next level by expanding the range of possible numbers to 1-100.</p>
+    <pre class="code">
+import random
+      
+secret = random.randint(1, 100)
+
+print('Enter a guess:')
+guess = int(input())
+
+if guess < secret:
+    print('Your guess is too low.')
+elif guess > secret:
+    print('Your guess is too high.')
+else:
+    print('You got it!')
+
+<span class="light"># we should repeat this process a few more times...</span></pre>
+
+    <p>We can use a loop to repeat this process of getting inputs and displaying the appropriate response.</p>
+
+    <hr />
+
+    <h2 class="colored">For Loops</h2>
+
+    <p>Let's first see a for loop in action, and then we'll take it apart and explain what it's doing.</p>
+    <pre class="code">
+print('The following code will be repeated 3 times.')
+
+for i in range(3):
+    print('Say something:')
+    message = input()</pre>
+    <pre class="out">
+Say something:
+<span class="light">Roses are red</span>
+Say something:
+<span class="light">Violets are blue</span>
+Say something:
+<span class="light">And we're out of space-</span></pre>
+
+    <p>The <code>print()</code> and <code>input()</code> functions in the indented block are executed 3 times. If we wanted to repeat them more (or less) times, we change the number given to the <code>range()</code> function. Now let's take a look at how a for loop works.</p>
+    <p>A for loop follows the format of: "<code>for <span class="light">item</span> in <span class="light">collection_of_items</span></code>". We're going to use a list in this example (a series of items enclosed by brackets). Although we have yet to talk about lists, they illustrate the purpose of a for loop nicely (they are "collections of items" that we can loop over).</p>
+
+    <pre class="code">
+for person in ['bach', 'mozart', 'beethoven', 'chopin', 'rachmaninoff']:
+    print(person)</pre>
+    <pre class="out">
+bach
+mozart
+beethoven
+chopin
+rachmaninoff</pre>
+
+    <p>Reading the loop like this might help to intuitively see what the loop is doing: <em>for each person in this list, print out the person</em>. That's why the outputs contain (in order) each of the composers' names. The number of times a for loop repeats is based on the number of items in the list or collection. In this last example, there were 5 items in the list, and therefore the loop repeats 5 times.</p>
+    <p>Each time through the loop, Python takes the next item from the list and puts it into the variable <code>person</code>. Specifically, during the first iteration (the first pass through the loop), Python takes the first item of the list, "bach", and puts it into the variable <code>person</code>. As a result, <code>print(person)</code> prints out "bach" the first time. The second time through the loop, <code>person</code> is equal to the second item from the list, "mozart", so <code>print(person)</code> prints out "mozart" this time, and so on.</p>
+
+    <p>This next example prints out the squares of a list of numbers:</p>
+    <pre class="code">
+for num in [2, 3, 5, 7, 11, 13, 17, 19]:
+    print(num, 'squared is', num ** 2)</pre>
+    <pre class="out">
+2 squared is 4
+3 squared is 9
+5 squared is 25
+7 squared is 49
+11 squared is 121
+13 squared is 169
+17 squared is 289
+19 squared is 361</pre>
+
+    <p>This loop repeats for 8 times because there are 8 items in the list here. The first time through the loop, <code>num</code> is equal to 2 because that's the first item in the list, so <code>num ** 2</code> gives us 4. On the second iteration, <code>num</code> becomes 3 (the second item from the list). This repeats until the 8th iteration, in which <code>num</code> is 19.</p>
+
+    <p>When we use "<code>for i in range(5)</code>" to repeat a piece of code 5 times, the function <code>range()</code> is actually generating a "collection of items" (called an iterable) that has exactly 5 items in it. That's why the loop will repeat for 5 times. In fact, the "collection of items" that <code>range(5)</code> generates will be 0, 1, 2, 3, and 4. Similarly, <code>range(10)</code> will generate the numbers 0 to 9.</p>
+
+    <p>Because <code>range(5)</code> generates 0, 1, 2, 3, and 4, the variable <code>i</code> will be equal to 0 for the first iteration of the loop, 1 for the second iteration, 2 for the third, and so on. We use <code>i</code> as the name of our variable as per convention, but feel free to use any other variable name that makes sense for the situation.</p>
+
+    <pre class="code">
+for i in range(5): <span class="light"># think of this as "for i in [0, 1, 2, 3, 4]:"</span>
+    print(i)</pre>
+    <pre class="out">
+0
+1
+2
+3
+4</pre>
+
+    <p>If we wanted to calculate the sum 1 + 2 + 3 + ... + 98 + 99 + 100, we can use this loop:</p>
+    <pre class="code">
+current_sum = 0
+for i in range(100): <span class="light"># think "for i in [0, 1, 2, ..., 98, 99]"</span>
+    current_sum = current_sum + (i+1)
+print(current_sum)</pre>
+    <pre class="out">5050</pre>
+    <p>We use the variable <code>current_sum</code> to keep track of our sum so far. It starts at 0, and by the time we get through the loop 100 times, it'll contain the final sum. Each time through the loop, we add the next number to <code>current_sum</code>. Because <code>range(100)</code> gives us 0, 1, 2, ... 98, 99 instead of 1, 2, 3, ... 99, 100, we add <code>(i+1)</code> instead of <code>i</code>.</p>
+    <p>During the first pass through the loop, we add 1 to the sum (<code>i</code> is 0, so <code>i+1</code> is 1), during the second pass, we add 2 to the sum (<code>i</code> is 1, so <code>i+1</code> is 2), and this process repeats until we add 100 to the sum in the last iteration (<code>i</code> is 99, so <code>i+1</code> is 100).</p>
+
+    <div class="indent">
+      <p>Try:<br />
+	Calculate 1 + 2 + 3 + ... + 998 + 999 + 1000.<br />
+	Use "<code>for num in [100, 81, 64, 49, 36, 25, 16, 9, 4, 1]</code>" and print out the even numbers from this list (hint: you can use the remainder operator <code>%</code> since even numbers have 0 remainder when divided by 2).
+      </p>
+    </div>
+
+    <hr />
+
+    <h2 class="colored">While Loops</h2>
+
+    <p>While loops are often more versatile than for loops. Rather than looping over a collection of items, while loops repeat as long as a given condition is true. For example:</p>
+
+    <pre class="code">
+correct_password = 'watermelons'
+
+print('Enter the password:')
+password = input()
+
+while password != correct_password:
+    print('Wrong password - try again:')
+    password = input()
+
+print('Welcome!')</pre>
+    <pre class="out">
+Enter the password:
+<span class="light">peaches</span>
+Wrong password - try again:
+<span class="light">dragonfruits</span>
+Wrong password - try again:
+<span class="light">cantaloupes</span>
+Wrong password - try again:
+<span class="light">watermelons</span>
+Welcome!</pre>
+
+    <p>Read the loop this way: <em>while password is not equal to the correct password, print out "wrong password" and get inputs again</em>. The condition of a while loop is like the condition of an if statement, and it also uses the <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>, <code>==</code>, and <code>!=</code> comparison operators. The diagram of the code above is:</p>
+
+    <pre class="freeform">
+           <span class="light"># entering password (1st try)</span>
+                         |
+                         v
+   *--> while password != correct_password: ----*
+   |                     |                      |
+   |                     | <span class="light">True</span>                 |
+   |                     v                      |
+   |        <span class="light"># wrong password, try again</span>         | <span class="light">False</span>
+   |                     |                      |
+   *---------------------*                      |
+                                                |
+                         *----------------------*
+                         |
+                         v
+                    <span class="light"># welcome!</span></pre>
+
+    <p>After each iteration through the loop, the condition is tested again. If it still holds true, then the body of the loop is repeated. If it becomes false, then the loop is finished.</p>
+    <p>It's possible that a while loop never executes even once if the condition evaluates to false initially. It is also possible to create a loop that never ends (an infinite loop) by making a condition that never becomes false. The easiest way to do so uses <code>while True</code>.</p>
+    <p>You can also use a while loop to achieve the effect of a for loop. This next example is similar to "<code>for i in range(5)</code>".</p>
+
+    <pre class="code">
+i = 0
+while i &lt; 5:
+    print(i)
+    i = i + 1</pre>
+    <pre class="out">
+0
+1
+2
+3
+4</pre>
+
+    <p>The variable <code>i</code> starts as 0, and it is increased by 1 each time it goes through the loop (<code>i = i + 1</code>). The loop repeats as long as <code>i &lt; 5</code>, achieving the effect of the "<code>for i in range(5)</code>" loop and printing out the numbers 0 through 4.</p>
+    <p>Let's take a look at the very last iteration (when <code>i</code> is 4). <code>print(i)</code> displays 4, and <code>i</code> is incremented to 5 by the update <code>i = i + 1</code>. Since we've now reached the bottom of the loop, we go back to the top and recheck the condition. Because <code>i &lt; 5</code> is now false, the loop ends without repeating again (so 5 is not printed out).</p>
+    <p>Loop logic can be confusing, and it's a good idea to mentally follow each step of the loop to understanding exactly what it's doing (creating a diagram like the one above can also help).</p>
+    <p>The next example starts with <code>i = 1</code> and doubles <code>i</code> each time, until <code>i</code> becomes greater than 1000.</p>
+
+    <pre class="code">
+i = 1
+while i &lt;= 1000:
+    print(i)
+    i = i * 2</pre>
+    <pre class="out">
+1
+2
+4
+8
+16
+32
+64
+128
+256
+512</pre>
+
+    <div class="indent">
+      <p>Try:<br />
+	Use a while loop to print out all odd numbers that are less than 50 (1, 3, 5, 7... 47, 49).<br />
+	Calculate the sum of a series of numbers (the user should be able to enter any amount of numbers). Use a while loop to keep repeating until the user enters a 0 to signify the end of input. The interaction might go something like <a href="quicksum.txt" target="_blank">this</a>.</p>
+    </div>
+
+    <hr />
+
+    <h2 class="colored">Break and Continue</h2>
+    
+    <p>The break statement immediately exits out of a loop (it "breaks" out of a loop). This is often useful if we want to stop our loop right away when a certain condition is met.</p>
+    
+    <pre class="code">
+for i in range(101): <span class="light"># for i in [0, 1, 2, ..., 99, 100]</span>
+    print('The next perfect square is', i ** 2)
+    print('Enter the letter s to stop, or anything else to keep going:')
+    action = input()
+    if action == 's':
+        break <span class="light"># immediately exit the loop</span></pre>
+    <pre class="out">
+The next perfect square is 0
+Enter the letter s to stop, or anything else to keep going:
+a
+The next perfect square is 1
+Enter the letter s to stop, or anything else to keep going:
+a
+The next perfect square is 4
+Enter the letter s to stop, or anything else to keep going:
+a
+The next perfect square is 9
+Enter the letter s to stop, or anything else to keep going:
+s</pre>
+
+    <p>We can also use break to make another version of our password checker (using an infinite loop):</p>
+    <pre class="code">
+while True:
+    print('Enter your password:')
+    password = input()
+    if password == 'watermelons':
+        break <span class="light"># correct, exit the loop</span>
+    print('Wrong password - please try again.')
+print('Welcome!')</pre>
+    <pre class="out">
+Enter your password:
+<span class="light">cherries</span>
+Wrong password - please try again.
+Enter your password:
+<span class="light">pomegranates</span>
+Wrong password - please try again.
+Enter your password:
+<span class="light">watermelons</span>
+Welcome!</pre>
+
+    <p>The continue statement skips over the rest of the loop body, and "continues" onto the next iteration.</p>
+
+    <pre class="code">
+sum_all = 0
+sum_evens = 0      
+for i in range(11): <span class="light"># for i in [0, 1, 2, ..., 9, 10]</span>
+    sum_all = sum_all + i
+    if i%2 == 1:
+        continue <span class="light"># if i is odd, continue to the next number</span>
+    sum_evens = sum_evens + i
+print(sum_all)
+print(sum_evens)</pre>
+    <pre class="out">
+55
+30</pre>
+
+    <p>When using continue in a while loop, the condition will be rechecked before the new iteration starts.</p>
+
+    <div class="indent">
+      <p>Try: use "<code>for planet in ['neptune', 'uranus', 'saturn', 'jupiter', 'mars', 'earth', 'venus', 'mercury']</code>" to print out each of the planets, and use a break to stop immediately after "earth".</p>
+    </div>
+
+    <div class="pageflip">
+      <a href="if.html">&lt;--</a>
+      <a>#</a>
+      <a>--&gt;</a>
+    </div>
+
+  </body>
+
+</html>

@@ -72,13 +72,13 @@ Type something below:
 <span class="light">the sky is blue</span>
 You said the sky is blue</pre>
 
-    <p>We colored the inputs we typed in light gray. After we press enter to send the inputs through, the variable <code>message</code> would be assigned the value of <code>'the sky is blue'</code>.</p>
+    <p>We colored the inputs we typed in light gray. After we press enter (pressing enter tells Python that we're done typing) to send the inputs through, the variable <code>message</code> would be assigned the value of <code>'the sky is blue'</code>.</p>
 
     <p>One thing to notice is that the <code>input()</code> function always returns (gives you) a string, even if the actual inputs were meant as numbers. For instance, if we typed in the number 5, <code>input()</code> would give you <code>'5'</code> instead. To address this, we need to use <code>int()</code> to convert our inputs to numbers.</p>
 
     <pre class="code">
 print('Enter a number:')
-a = int(input()) # gets some input, and convert it to a number
+a = int(input()) <span class="light"># gets some input, and convert it to a number</span>
 print('Enter another number:')
 b = int(input())
 print(a + b)</pre>
@@ -166,10 +166,10 @@ They are equal!</pre>
     <pre class="freeform">
 <span class="light"># getting inputs...</span>
         |
-        v        <span class="light">No                    No</span>
+        v       <span class="light">False                 False</span>
     if a < b:  ------>  elif a > b:  ------> else:
         |                    |                 |
-        | <span class="light">Yes</span>                | <span class="light">Yes</span>             |
+        | <span class="light">True</span>               | <span class="light">True</span>            |
         v                    v                 v
   print('Less')       print('Greater')    print('Equal')
         |                    |                 |
@@ -182,12 +182,12 @@ They are equal!</pre>
     <pre class="code">
 print('Quiz time! Enter your name:')
 name = input()
-num_correct = 0 # how many questions you answered correctly
+num_correct = 0 <span class="light"># how many questions you answered correctly</span>
 
 if name == 'secret answer key':
     print('*** The answers are 5, 26, and 8 ***')
 else:
-    # Question 1
+    <span class="light"># Question 1</span>
     print('155 / 31 = ')
     answer = int(input())
     if answer == 5:
@@ -196,7 +196,7 @@ else:
     else:
         print('The correct answer was 5.')
 
-    # Question 2
+    <span class="light"># Question 2</span>
     print('How many letters are there in the English alphabet?')
     answer = int(input())
     if answer == 26:
@@ -205,7 +205,7 @@ else:
     else:
         print('The correct answer was 26.')
 
-    # Question 3
+    <span class="light"># Question 3</span>
     print('How many planets are there in the Solar System?')
     answer = int(input())
     if answer == 8:
@@ -252,7 +252,7 @@ if weather == 'rainy' and day == 'Monday':
     <div class="pageflip">
       <a href="intro.html">&lt;--</a>
       <a>#</a>
-      <a>--&gt;</a>
+      <a href="loops.html">--&gt;</a>
     </div>
 
   </body>
