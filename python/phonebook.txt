@@ -1,0 +1,37 @@
+--- Phone Book ---
+Enter n for new contact, g for get number, and d for done: n
+[New Contact]
+Name: alexa
+Number: 1120
+
+Enter n for new contact, g for get number, and d for done: n
+[New Contact]
+Name: siri
+Number: 9999
+
+Enter n for new contact, g for get number, and d for done: n
+[New Contact]
+Name: google
+Number: 5378
+
+Enter n for new contact, g for get number, and d for done: g
+[Get Number]
+Look up name: siri
+9999
+
+Enter n for new contact, g for get number, and d for done: g
+[Get Number]
+Look up name: bob   
+Not found
+
+Enter n for new contact, g for get number, and d for done: n
+[New Contact]
+Name: bob
+Number: 0000
+
+Enter n for new contact, g for get number, and d for done: g
+[Get Number]
+Look up name: bob
+0000
+
+Enter n for new contact, g for get number, and d for done: d

@@ -1,0 +1,67 @@
+[ ][ ][ ]
+[ ][ ][ ]
+[ ][ ][ ]
+It's player X's turn.
+Row: 2
+Column: 2
+
+[ ][ ][ ]
+[ ][X][ ]
+[ ][ ][ ]
+It's player O's turn.
+Row: 1
+Column: 1
+
+[O][ ][ ]
+[ ][X][ ]
+[ ][ ][ ]
+It's player X's turn.
+Row: 2
+Column: 3
+
+[O][ ][ ]
+[ ][X][X]
+[ ][ ][ ]
+It's player O's turn.
+Row: 2
+Column: 1
+
+[O][ ][ ]
+[O][X][X]
+[ ][ ][ ]
+It's player X's turn.
+Row: 3
+Column: 1
+
+[O][ ][ ]
+[O][X][X]
+[X][ ][ ]
+It's player O's turn.
+Row: 1
+Column: 3
+
+[O][ ][O]
+[O][X][X]
+[X][ ][ ]
+It's player X's turn.
+Row: 1
+Column: 2
+
+[O][X][O]
+[O][X][X]
+[X][ ][ ]
+It's player O's turn.
+Row: 3
+Column: 2
+
+[O][X][O]
+[O][X][X]
+[X][O][ ]
+It's player X's turn.
+Row: 3
+Column: 3
+
+[O][X][O]
+[O][X][X]
+[X][O][X]
+IT'S A TIE...

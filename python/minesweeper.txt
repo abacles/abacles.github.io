@@ -1,0 +1,31 @@
+1 2 3 4 5 6 7 8 9 10
+- - - - - - - - - - 
+Which spot would you like to open?
+6
+1 2 3 4 5 6 7 8 9 10
+- - - - - 0 - - - - 
+Which spot would you like to open?
+5
+1 2 3 4 5 6 7 8 9 10
+- - - - 1 0 - - - - 
+Which spot would you like to open?
+7
+1 2 3 4 5 6 7 8 9 10
+- - - - 1 0 1 - - - 
+Which spot would you like to open?
+3
+1 2 3 4 5 6 7 8 9 10
+- - 1 - 1 0 1 - - - 
+Which spot would you like to open?
+2
+1 2 3 4 5 6 7 8 9 10
+- 0 1 - 1 0 1 - - - 
+Which spot would you like to open?
+1
+1 2 3 4 5 6 7 8 9 10
+0 0 1 - 1 0 1 - - - 
+Which spot would you like to open?
+9
+YOU WIN!
+1 2 3 4 5 6 7 8 9 10
+- - - * - - - * - *
