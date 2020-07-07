@@ -1,0 +1,90 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf600
+{\fonttbl\f0\fnil\fcharset0 Menlo-Italic;\f1\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red3\green45\blue153;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c25950\c66514;\cssrgb\c0\c0\c0;}
+\margl1440\margr1440\vieww19520\viewh12600\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\i\fs24 \cf0 *** Printing (displaying) output ***\
+
+\f1\i0 \
+print('\cf2 regular text goes here\cf0 ')\
+print(\cf2 count\cf0 )                     # prints out the value of the variable count\
+\
+------------------------------------------------------------\
+\
+
+\f0\i *** Working with variables ***\
+
+\f1\i0 \
+\cf2 count\cf0  = \cf2 5\cf0                         # sets count to be 5\
+\cf2 message\cf0  = '\cf2 some text\cf0 '            # sets message to be "some text"\
+\cf2 count\cf0  = \cf2 count + 5\cf0                 # increases count by 5\
+\
+------------------------------------------------------------\
+\
+
+\f0\i *** Inputs ***\
+
+\f1\i0 \
+\cf2 text\cf0  = input()                   # waits for the user to type something in\
+                                 # and stores it in a variable called text\
+\
+\cf2 num\cf0  = int(input())               # waits for the user to type something in,\
+                                 # converts it to a number, and stores the\
+                                 # result in a variable called num\
+\
+------------------------------------------------------------\
+\
+
+\f0\i *** If statements ***\
+
+\f1\i0 \
+if \cf2 num == 10\cf0 :                    # sets message to be "You win!" only if \
+    \cf2 message = 'You win!'\cf0          # num is equal to 10\
+\
+if \cf2 num < 100\cf0 :                    # do this if num is less than 100\
+    # do stuff\
+elif \cf2 num > 100\cf0 :                  # otherwise, do this if num is greater than 100\
+    # do other stuff\
+else:                            # otherwise, do this\
+    # do more stuff\
+\
+------------------------------------------------------------\
+\
+
+\f0\i *** Loops ***\
+
+\f1\i0 \
+for \cf2 i\cf0  in range(\cf2 10\cf0 ):              # repeat 10 times\
+    # do stuff\
+\
+while \cf2 num < 5\cf0 :                   # repeat as long as num is less than 5\
+    # do stuff\
+\
+for \cf2 item\cf0  in \cf2 [1, 4, 9, 16, 25]\cf0 :   # repeat for each of the items in this list\
+    # do stuff\
+\
+------------------------------------------------------------\
+\
+
+\f0\i *** Lists ***\
+
+\f1\i0 \
+\cf2 fruits\cf0  = \cf3 [\cf2 'cherries', 'grapes', 'kiwis'\cf3 ]\cf0 \
+\cf2 nums\cf0  = \cf3 [\cf2 1, 3, 5, 7, 9\cf3 ]\cf0 \
+\
+print(\cf2 fruits\cf0 [\cf2 1\cf0 ])                 # prints "grapes"\
+\cf2 nums\cf0 [\cf2 0\cf0 ] = \cf2 100\cf0                     # sets the first element in nums to be 100\
+\
+\cf2 fruits\cf0 .append(\cf2 'watermelons'\cf0 )     # adds "watermelons" to the end of the\
+                                 # fruits list\
+\
+print(len(\cf2 fruits\cf0 ))               # prints out the length of the fruits list\
+\
+for \cf2 item\cf0  in \cf2 fruits\cf0 :              # print out each item in the fruits list\
+    print(\cf2 item\cf0 )\
+\
+for \cf2 i\cf0  in range(len(\cf2 fruits\cf0 )):     # print out each item in the fruits list\
+    print(\cf2 fruits\cf0 [\cf2 i\cf0 ])\
+}
